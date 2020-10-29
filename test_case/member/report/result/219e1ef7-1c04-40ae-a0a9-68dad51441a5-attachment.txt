@@ -1,0 +1,5 @@
+2020-10-28 17:58:53,510|INFO    |test_member.py:  72|-------开始查看企业微信活跃度-------
+2020-10-28 17:58:53,510|INFO    |member.py:  15|{'token': '-XKxC7yOFFPMo1eKLMpSe88MtMQps1MokQGsaqGncXnQ2BM4p5xYwXgRY3ejhrV1UHt60G568H4oQYGSghiB_IV1IHAC3nAN9-LwCiKTSVGVQKu5CA768rr_pBy50eRPcdvHrJ46DMFr19_0hJjwWED1L6geU14hjIIJe6-mhN6OPqarLN4Va_ILRre3738_xYSFKmYe69_V6eC56xTxVg', 'date': '2020-10-10'}
+2020-10-28 17:58:53,511|INFO    |member.py:  18|{'method': 'POST', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/get_active_stat', 'params': 'access_token=-XKxC7yOFFPMo1eKLMpSe88MtMQps1MokQGsaqGncXnQ2BM4p5xYwXgRY3ejhrV1UHt60G568H4oQYGSghiB_IV1IHAC3nAN9-LwCiKTSVGVQKu5CA768rr_pBy50eRPcdvHrJ46DMFr19_0hJjwWED1L6geU14hjIIJe6-mhN6OPqarLN4Va_ILRre3738_xYSFKmYe69_V6eC56xTxVg', 'json': {'date': '2020-10-10'}}
+2020-10-28 17:58:53,713|INFO    |test_member.py:  75|打印响应结果
+2020-10-28 17:58:53,714|INFO    |test_member.py:  76|-------测试结束-------

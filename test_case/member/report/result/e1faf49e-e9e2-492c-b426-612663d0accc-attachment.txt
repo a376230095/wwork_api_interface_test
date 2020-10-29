@@ -1,0 +1,5 @@
+2020-10-28 18:01:14,923|INFO    |test_member.py:  80|-------开始获取企业微信二维码-------
+2020-10-28 18:01:14,923|INFO    |member.py:  15|{'token': '-XKxC7yOFFPMo1eKLMpSe88MtMQps1MokQGsaqGncXnQ2BM4p5xYwXgRY3ejhrV1UHt60G568H4oQYGSghiB_IV1IHAC3nAN9-LwCiKTSVGVQKu5CA768rr_pBy50eRPcdvHrJ46DMFr19_0hJjwWED1L6geU14hjIIJe6-mhN6OPqarLN4Va_ILRre3738_xYSFKmYe69_V6eC56xTxVg', 'size_type': 1}
+2020-10-28 18:01:14,924|INFO    |member.py:  18|{'method': 'get', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/corp/get_join_qrcode', 'params': 'access_token=-XKxC7yOFFPMo1eKLMpSe88MtMQps1MokQGsaqGncXnQ2BM4p5xYwXgRY3ejhrV1UHt60G568H4oQYGSghiB_IV1IHAC3nAN9-LwCiKTSVGVQKu5CA768rr_pBy50eRPcdvHrJ46DMFr19_0hJjwWED1L6geU14hjIIJe6-mhN6OPqarLN4Va_ILRre3738_xYSFKmYe69_V6eC56xTxVg&size_type=1'}
+2020-10-28 18:01:15,035|INFO    |test_member.py:  83|打印响应结果
+2020-10-28 18:01:15,035|INFO    |test_member.py:  84|-------测试结束-------

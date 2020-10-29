@@ -1,0 +1,5 @@
+[32mINFO    [0m log:test_member.py:97 -------开始部门成员详细信息-------
+[32mINFO    [0m log:member.py:69 {'token': '-XKxC7yOFFPMo1eKLMpSe88MtMQps1MokQGsaqGncXnQ2BM4p5xYwXgRY3ejhrV1UHt60G568H4oQYGSghiB_IV1IHAC3nAN9-LwCiKTSVGVQKu5CA768rr_pBy50eRPcdvHrJ46DMFr19_0hJjwWED1L6geU14hjIIJe6-mhN6OPqarLN4Va_ILRre3738_xYSFKmYe69_V6eC56xTxVg', 'department_id': '1', 'fetch_child': '1'}
+[32mINFO    [0m log:member.py:72 {'method': 'get', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/list', 'params': 'access_token=-XKxC7yOFFPMo1eKLMpSe88MtMQps1MokQGsaqGncXnQ2BM4p5xYwXgRY3ejhrV1UHt60G568H4oQYGSghiB_IV1IHAC3nAN9-LwCiKTSVGVQKu5CA768rr_pBy50eRPcdvHrJ46DMFr19_0hJjwWED1L6geU14hjIIJe6-mhN6OPqarLN4Va_ILRre3738_xYSFKmYe69_V6eC56xTxVg&department_id=1&fetch_child=1'}
+[32mINFO    [0m log:test_member.py:101 打印响应结果
+[32mINFO    [0m log:test_member.py:102 -------测试结束-------

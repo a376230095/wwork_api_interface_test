@@ -1,0 +1,3 @@
+"method": "get"
+"url": "https://qyapi.weixin.qq.com/cgi-bin/corp/get_join_qrcode"
+"params": "access_token=${token}&size_type=${size_type}"

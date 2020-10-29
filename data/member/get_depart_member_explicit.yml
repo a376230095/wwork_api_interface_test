@@ -1,0 +1,3 @@
+"method": "get"
+"url": "https://qyapi.weixin.qq.com/cgi-bin/user/list"
+"params": "access_token=${token}&department_id=${department_id}&fetch_child=${fetch_child}"

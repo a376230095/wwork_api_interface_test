@@ -1,0 +1,5 @@
+"method": "post"
+"url": "https://qyapi.weixin.qq.com/cgi-bin/user/batchdelete"
+"params": "access_token=$token"
+"json":
+  "useridlist": ${userid_list}

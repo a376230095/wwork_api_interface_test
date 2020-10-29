@@ -1,0 +1,3 @@
+[32mINFO    [0m log:test_member.py:62 -------开始批量删除获取成员-------
+[32mINFO    [0m log:test_member.py:67 打印响应结果:{'errcode': 0, 'errmsg': 'updated'}
+[32mINFO    [0m log:test_member.py:68 -------测试结束-------

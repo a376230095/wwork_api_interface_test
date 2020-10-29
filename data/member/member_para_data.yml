@@ -1,0 +1,82 @@
+# 增加联系人，对应参数：userid，name，mobile,errcode,errmsg
+add:
+  # 输入非重复的userid，name，mobile，断言成功
+  -
+    - "tong"
+    - "tong"
+    - "13222661165"
+    - 0
+    - "created"
+  #没有userid,创建失败
+  -
+    - ""
+    - "tong1"
+    - "13221661164"
+    - 0
+    - "aaaa"
+  #没有name，断言失败
+  -
+    - "tong2"
+    - ""
+    - "13221661163"
+    - 0
+    - "aaaa"
+  #没有电话，断言失败
+  -
+    - "tong3"
+    - "tong3"
+    - ""
+    - 0
+    - "aaaa"
+  # userid重复，断言失败
+  -
+    - "tong"
+    - "tong4"
+    - "13222661162"
+    - 0
+    - "created"
+  # name重复，断言成功
+  -
+    - "tong5"
+    - "tong"
+    - "13222661161"
+    - 0
+    - "created"
+  # 电话重复，断言失败
+  -
+    - "tong6"
+    - "tong6"
+    - "13222661165"
+    - 0
+    - "created"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

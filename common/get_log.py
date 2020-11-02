@@ -1,13 +1,12 @@
 import logging
 import os
-import sys
 
 from common.config import cf
 import datetime
 
 class Log:
     # 生成的格式花器
-    formatter = logging.Formatter("%(asctime)s|%(levelname)-8s|%(filename)s:%(lineno)4s|%(message)s")
+    formatter = logging.Formatter("%(asctime)s|%(levelname)-6s|%(filename)s:%(lineno)-3s|%(message)s","%Y-%m-%d-%H:%M")
     BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
     def __init__(self,name="log"):

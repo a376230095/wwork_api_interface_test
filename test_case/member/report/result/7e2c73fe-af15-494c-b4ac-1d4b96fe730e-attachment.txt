@@ -1,3 +1,0 @@
-[32mINFO    [0m log:test_member.py:28 -------开始测试增加成员-------
-[32mINFO    [0m log:test_member.py:33 打印响应结果
-[32mINFO    [0m log:test_member.py:34 -------测试结束-------

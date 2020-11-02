@@ -1,104 +1,162 @@
+import allure
 import pytest
-
 from api.member import Member
 from api.wework import Wework
-
+from common.config import cf
 from common.get_log import log
 
+@allure.feature("通讯录人员的增删改查等接口测试")
 class TestMember():
-    secret="YC9RRMQcQqGNxapjoeiDIn84mCY7H-aJblz_X9X073U"
-    token = Wework().get_token(secret)
+    # 通过配置文件获取联系人的secret
+    contact_secret=cf.get_key("wwork","contact_secret")
+    # 获取access_token
+    token = Wework().get_token(contact_secret)
+    # 初始化member的api对象
     member = Member()
-    add_data = member.load_yaml("data/member/member_para_data.yml")['add']
 
+    '''
+    这样获取数据的方法，要读取两次文件，速度太慢了
+    add_data = member.load_yaml("data/member/member_para_data.yml")['add']['data']
+    add_ids = member.load_yaml("data/member/member_para_data.yml")['add']['ids']
+    '''
+    # 参数化的数据
+    para_data = member.load_yaml("data/member/member_para_data.yml")
 
-    def setup_class(self):
-        # add的数据准备
-        self.member.delete_member(self.token,"tong")
-        pass
+    # 删除用例的参数化数据和ids标题数据
+    delete_data = para_data['delete']['data']
+    delete_ids = para_data['delete']['ids']
+    # 删除用例的参数化数据和ids标题数据
+    multi_delete_data = para_data['multi_delete']['data']
+    multi_delete_ids = para_data['multi_delete']['ids']
+    # 删除用例的参数化数据和ids标题数据
+    add_data = para_data['add']['data']
+    add_ids = para_data['add']['ids']
+    # 删除用例的参数化数据和ids标题数据
+    edit_data = para_data['edit']['data']
+    edit_ids = para_data['edit']['ids']
+    # 删除用例的参数化数据和ids标题数据
+    get_data = para_data['get']['data']
+    get_ids = para_data['get']['ids']
+    # 删除用例的参数化数据和ids标题数据
+    active_data = para_data['active']['data']
+    active_ids = para_data['active']['ids']
+    # 删除用例的参数化数据和ids标题数据
+    qr_data = para_data['qr']['data']
+    qr_ids = para_data['qr']['ids']
+    # 删除用例的参数化数据和ids标题数据
+    depart_simple_data = para_data['depart_simple']['data']
+    depart_simple_ids = para_data['depart_simple']['ids']
+    # 删除用例的参数化数据和ids标题数据
+    depart_explicit_data = para_data['depart_explicit']['data']
+    depart_explicit_ids = para_data['depart_explicit']['ids']
 
+    #
+    # def setup_class(self,):
+    #     print("abc")
 
-
-    @pytest.mark.parametrize(("userid,name,mobile,errcode,errmsg"),add_data)
-    def test01_add_member(self,userid,name,mobile,errcode,errmsg):
-        log.info("-------开始测试增加成员-------")
-
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.story("增加联系人")
+    @pytest.mark.parametrize(("userid,name,mobile,errcode,errmsg"),add_data,ids=add_ids)
+    def test01_add_member(self,userid,name,mobile,errcode,errmsg,add):
+        log.info(f"-------开始测试增加成员-------")
         res=self.member.add_member(self.token,userid,name,mobile)
-        log.info(f"打印响应结果:{res}" )
+        log.info(f"打印响应结果:{res}")
         log.info("-------测试结束-------")
         assert res["errcode"] == errcode
-        assert res["errmsg"] == errmsg
+        assert errmsg in res["errmsg"]
 
-    def test02_get_member(self):
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.story("获得联系人信息")
+    @pytest.mark.parametrize(("userid,errcode,errmsg"),get_data , ids=get_ids)
+    def test02_get_member(self,userid,errcode,errmsg,get):
         log.info("-------开始测试获取成员-------")
-        userid="tong1234"
         res=self.member.get_member_info(self.token,userid)
         log.info(f"打印响应结果:{res}" )
         log.info("-------测试结束-------")
-        assert res["errcode"] == 0
+        assert res["errcode"] == errcode
+        assert errmsg in res["errmsg"]
 
-    def test04_delete_member(self):
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.story("删除联系人")
+    @pytest.mark.parametrize(("userid,errcode,errmsg"),delete_data,ids=delete_ids)
+    def test04_delete_member(self,userid,errcode,errmsg,delete):
         log.info("-------开始测试获取成员-------")
-        userid="tong12345"
         res=self.member.delete_member(self.token,userid)
         log.info(f"打印响应结果:{res}")
         log.info("-------测试结束-------")
-        assert res["errcode"] == 0
+        assert res["errcode"] == errcode
+        assert errmsg in res["errmsg"]
 
-    def test05_multi_delete_member(self):
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.story("批量删除联系人")
+    @pytest.mark.parametrize(("userid_list,errcode,errmsg"), multi_delete_data, ids=multi_delete_ids)
+    def test05_multi_delete_member(self,userid_list,errcode,errmsg,multi_delete):
         log.info("-------开始批量删除获取成员-------")
-        user_list=["tongtong1","tongtong2","tongtong3"]
-        res=self.member.multi_delete_member(self.token,user_list)
-        log.info("打印响应结果:res")
+        res=self.member.multi_delete_member(self.token,userid_list)
+        log.info(f"打印响应结果:{res}")
         log.info("-------测试结束-------")
-        assert res["errcode"] == 0
+        assert res["errcode"] == errcode
+        assert errmsg in res["errmsg"]
 
-    def test03_edit_member(self):
-        log.info("-------开始批量删除获取成员-------")
-        userid="tong1234"
-        name="tong1234"
-        mobile="13172771165"
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.story("编辑联系人")
+    @pytest.mark.parametrize(("userid,name,mobile,errcode,errmsg"),edit_data,ids=edit_ids)
+    def test03_edit_member(self,userid,name,mobile,errcode,errmsg,edit):
+        log.info("-------开始修改获取成员-------")
         res=self.member.edit_member(self.token,userid,name,mobile)
         log.info(f"打印响应结果:{res}" )
         log.info("-------测试结束-------")
-        assert res["errcode"] == 0
+        assert res["errcode"] == errcode
+        assert errmsg in res["errmsg"]
 
-    def test_active_stat(self):
+    @allure.severity(allure.severity_level.NORMALL)
+    @allure.story("查看企业微信活跃度")
+    @pytest.mark.parametrize(("date,errcode,errmsg"), active_data, ids=active_ids)
+    def test_active_stat(self,date,errcode,errmsg):
         log.info("-------开始查看企业微信活跃度-------")
-        date="2020-10-10"
         res=self.member.get_active_stat(self.token,date)
         log.info(f"打印响应结果:{res}" )
         log.info("-------测试结束-------")
-        assert res["errcode"] == 0
+        assert res["errcode"] == errcode
+        assert errmsg in res["errmsg"]
 
-    def test_get_invite_qr(self):
+    @allure.severity(allure.severity_level.NORMALLL)
+    @allure.story("增加联系人")
+    @pytest.mark.parametrize(("size,errcode,errmsg"), qr_data, ids=qr_ids)
+    def test_get_invite_qr(self,size,errcode,errmsg):
         log.info("-------开始获取企业微信二维码-------")
-        size_type=1
-        res=self.member.get_invite_qr(self.token,size_type)
+        res=self.member.get_invite_qr(self.token,size)
         log.info(f"打印响应结果:{res}" )
         log.info("-------测试结束-------")
-        assert res["errcode"] == 0
+        assert res["errcode"] == errcode
+        assert errmsg in res["errmsg"]
 
-    def test_get_depart_member(self):
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.story("查看部门联系人的简单信息")
+    @pytest.mark.parametrize(("department_id,fetch_child,errcode,errmsg"),depart_simple_data,ids=depart_simple_ids)
+    def test_get_depart_member(self,department_id,fetch_child,errcode,errmsg):
         log.info("-------开始获取部门成员简单的信息-------")
-        department_id="1"
-        fetch_child="1"
         res=self.member.get_depart_member(self.token,department_id,fetch_child)
         log.info(f"打印响应结果:{res}" )
         log.info("-------测试结束-------")
-        assert res["errcode"] == 0
+        assert res["errcode"] == errcode
+        assert errmsg in res["errmsg"]
 
-    def test_get_depart_member_explict(self):
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.story("查看部门联系人的复杂信息")
+    @pytest.mark.parametrize(("department_id,fetch_child,errcode,errmsg"), depart_explicit_data, ids=depart_explicit_ids)
+    def test_get_depart_member_explict(self,department_id,fetch_child,errcode,errmsg):
         log.info("-------开始部门成员详细信息-------")
-        department_id="1"
-        fetch_child="1"
         res = self.member.get_depart_member_explicit(self.token,department_id,fetch_child)
         log.info(f"打印响应结果:{res}" )
         log.info("-------测试结束-------")
-        assert res["errcode"] == 0
+        assert res["errcode"] == errcode
+        assert errmsg in res["errmsg"]
 
+    @allure.severity(allure.severity_level.BLOCKER)
+    @allure.story("增加联系人")
     @pytest.mark.smoke
-    def test_all_smoke_member(self,pre_data):
+    def test_all_smoke_member(self,test_all_pre_data):
         add_res=self.member.add_member(self.token,"tong1234","tong1234","13172771165")
         edit_res=self.member.edit_member(self.token,"tong1234","tong1234","13172771165")
         del_res=self.member.delete_member(self.token,"tong1234")
@@ -116,9 +174,6 @@ class TestMember():
         assert depart_res["errcode"] == 0
         assert depart_res_e["errcode"] == 0
         log.info("finish")
-
-
-
 
     def tear_down(self):
         pass

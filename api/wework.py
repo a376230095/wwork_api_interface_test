@@ -2,11 +2,12 @@ from api.base_api import BaseApi
 
 # 封装企业微信公共的api类，继承BaseApi的公共类
 from common.get_log import log
+from common.config import cf
 
 
 class Wework(BaseApi):
-    # 企业微信的id
-    corpid="ww630f49269e06f865"
+    # 通过配置文件获取企业微信的id
+    corpid=cf.get_key("wwork","corp_id")
     # 获取access_token，不同的应用的秘钥，会产生不同的access_token，所以就封装起来了
     def get_token(self,secret):
         data={

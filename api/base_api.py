@@ -1,5 +1,5 @@
 import os
-from pprint import pprint
+
 from string import Template
 import requests
 import yaml
@@ -24,6 +24,15 @@ class BaseApi():
         r=res.json()
         return r
 
+    # 进一步封装请求
+    def send_api_data(self,path,p_data,sub):
+        path=os.path.join(self.base_path,path)
+        data=self.template(path,p_data,sub)
+        log.info(f"请求为：{data}")
+        res=self.send_api(data)
+        log.info((f"响应为：{res}"))
+        return res
+
     @classmethod
     # 优化jsonpath代码，其他类就不用from jsonpath improt jsonpath了
     def jsonpath(cls,json,expr):
@@ -45,20 +54,23 @@ class BaseApi():
     def template(cls,path,data,sub=None):
         with open(path) as f:
             if sub is None:
-                # 不需要对数据进行二次提取
-                # Template(f.read()).substitute(data)先替换变量
-                # yaml.safe_load把yml格式的字符串变成dict类型返回
+                '''
+                不需要对数据进行二次提取，Template(f.read()).substitute(data)先替换变量
+                yaml.safe_load把yml格式的字符串变成dict类型返回
+                '''
                 return yaml.safe_load(Template(f.read()).substitute(data))
             else:
-                # 由于Template需要替换全部的变量，有漏的就会报错，先写Template(f.read()).substitute(data)
-                # 就会报错，data只对sub下一层的数据改，并没有改其他层的数据，肯定会报错
-                # 需要先yaml.safe_load(f)[sub]提取到下一层的数据，但由于是dict
-                # 要通过yaml.dump转化成yml格式的字符串，经过Template来改变变量，最后在yaml.safe_load转化成dict
+                '''
+                由于Template需要替换全部的变量，有漏的就会报错，先写Template(f.read()).substitute(data)
+                就会报错，data只对sub下一层的数据改，并没有改其他层的数据，肯定会报错
+                需要先yaml.safe_load(f)[sub]提取到下一层的数据，但由于是dict
+                要通过yaml.dump转化成yml格式的字符串，经过Template来改变变量，最后在yaml.safe_load转化成dict
+                '''
                 return yaml.safe_load(Template(yaml.dump(yaml.safe_load(f)[sub])).substitute(data))
-                # return yaml.safe_load(Template(f.read()).substitute(data))
+                # 错误的写法：return yaml.safe_load(Template(f.read()).substitute(data))
 
 if __name__=="__main__":
     a=BaseApi()
-    print(a.Base_Path)
-    a.Base_Path
-    print(a.load_yaml("data/member/member_para_data.yml"))
+    # print(a.Base_Path)
+    # a.Base_Path
+    print(a.load_yaml("data/member/member_para_data.yml")["multi_delete"]["data"])

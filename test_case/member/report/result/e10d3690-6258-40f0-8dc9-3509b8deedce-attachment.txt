@@ -1,0 +1,3 @@
+[32mINFO    [0m log:test_member.py:25 -------开始测试增加成员-------
+[32mINFO    [0m log:test_member.py:28 打印响应结果:{'errcode': 60104, 'errmsg': 'mobile existed:tong5'}
+[32mINFO    [0m log:test_member.py:29 -------测试结束-------

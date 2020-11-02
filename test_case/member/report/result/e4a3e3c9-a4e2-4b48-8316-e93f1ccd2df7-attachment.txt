@@ -1,5 +1,0 @@
-2020-10-28 17:58:53,990|INFO    |test_member.py:  88|-------开始获取部门成员简单的信息-------
-2020-10-28 17:58:53,990|INFO    |member.py:  60|{'token': '-XKxC7yOFFPMo1eKLMpSe88MtMQps1MokQGsaqGncXnQ2BM4p5xYwXgRY3ejhrV1UHt60G568H4oQYGSghiB_IV1IHAC3nAN9-LwCiKTSVGVQKu5CA768rr_pBy50eRPcdvHrJ46DMFr19_0hJjwWED1L6geU14hjIIJe6-mhN6OPqarLN4Va_ILRre3738_xYSFKmYe69_V6eC56xTxVg', 'department_id': '1', 'fetch_child': '1'}
-2020-10-28 17:58:53,991|INFO    |member.py:  63|{'method': 'get', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/simplelist', 'params': 'access_token=-XKxC7yOFFPMo1eKLMpSe88MtMQps1MokQGsaqGncXnQ2BM4p5xYwXgRY3ejhrV1UHt60G568H4oQYGSghiB_IV1IHAC3nAN9-LwCiKTSVGVQKu5CA768rr_pBy50eRPcdvHrJ46DMFr19_0hJjwWED1L6geU14hjIIJe6-mhN6OPqarLN4Va_ILRre3738_xYSFKmYe69_V6eC56xTxVg&department_id=1&fetch_child=1'}
-2020-10-28 17:58:54,325|INFO    |test_member.py:  92|打印响应结果
-2020-10-28 17:58:54,325|INFO    |test_member.py:  93|-------测试结束-------

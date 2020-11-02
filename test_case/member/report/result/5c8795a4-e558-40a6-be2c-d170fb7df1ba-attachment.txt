@@ -1,0 +1,3 @@
+[32mINFO    [0m log:test_member.py:25 -------开始测试增加成员-------
+[32mINFO    [0m log:test_member.py:28 打印响应结果:{'errcode': 60129, 'errmsg': 'missing mobile or email, hint: [1603977983_53_2c9abe30e624081c4a7a1dd2208266ac], from ip: 112.97.48.108, more info at https://open.work.weixin.qq.com/devtool/query?e=60129'}
+[32mINFO    [0m log:test_member.py:29 -------测试结束-------

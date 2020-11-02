@@ -1,59 +1,183 @@
 # 增加联系人，对应参数：userid，name，mobile,errcode,errmsg
 add:
+  ids:
+    - "输入非重复的userid，name，mobile，断言成功"
+    - "没有userid,创建失败"
+    - "没有name，断言失败"
+    - "没有电话，断言失败"
+    - "userid重复，断言失败"
+    - "name重复，断言成功"
+    - "电话重复，断言失败"
+  smoke:
+    - ["tong1234","tong1234","13172771165",0,"created"]
+  data:
   # 输入非重复的userid，name，mobile，断言成功
-  -
-    - "tong"
-    - "tong"
-    - "13222661165"
-    - 0
-    - "created"
-  #没有userid,创建失败
-  -
-    - ""
-    - "tong1"
-    - "13221661164"
-    - 0
-    - "aaaa"
-  #没有name，断言失败
-  -
-    - "tong2"
-    - ""
-    - "13221661163"
-    - 0
-    - "aaaa"
-  #没有电话，断言失败
-  -
-    - "tong3"
-    - "tong3"
-    - ""
-    - 0
-    - "aaaa"
-  # userid重复，断言失败
-  -
-    - "tong"
-    - "tong4"
-    - "13222661162"
-    - 0
-    - "created"
-  # name重复，断言成功
-  -
-    - "tong5"
-    - "tong"
-    - "13222661161"
-    - 0
-    - "created"
-  # 电话重复，断言失败
-  -
-    - "tong6"
-    - "tong6"
-    - "13222661165"
-    - 0
-    - "created"
+    -
+      - "tong"
+      - "tong"
+      - "13222261165"
+      - 0
+      - "created"
+    #没有userid,创建失败
+    -
+      - ""
+      - "tong1"
+      - "13221661164"
+      - 40058
+      - "userid exceed min length 1"
+    #没有name，断言失败
+    -
+      - "tong2"
+      - ""
+      - "13221661163"
+      - 40058
+      - "name exceed min utf8 words 1"
+    #没有电话，断言失败
+    -
+      - "tong3"
+      - "tong3"
+      - ""
+      - 60129
+      - "missing mobile or email"
+    # userid重复，断言失败
+    -
+      - "tong"
+      - "tong4"
+      - "13222661162"
+      - 60102
+      - "userid existed"
+    # name重复，断言成功
+    -
+      - "tong5"
+      - "tong"
+      - "13222661161"
+      - 0
+      - "created"
+    # 电话重复，断言失败
+    -
+      - "tong6"
+      - "tong6"
+      - "13222261165"
+      - 60104
+      - "mobile existed"
+
+# 删除联系人，对应参数：userid，errcode,errmsg
+delete:
+  ids:
+    - userid存在，不为空，断言成功
+    - userid为空，断言失败
+    - userid不存在，断言失败
+  data:
+    # userid存在，不为空，断言成功
+    - ["delete",0,"deleted"]
+    # userid不存在，断言失败
+    - ["tongd",60111,"userid not found"]
+    # userid不存在，断言失败
+    - ["",60111,"userid not found"]
+
+# 删除联系人，对应参数：userid_list，errcode,errmsg
+multi_delete:
+  ids:
+    - userid_list存在，断言成功
+    - userid_list为空，断言失败
+    - userid_list都不存在，断言失败
+    - userid_list有一个不存在，其他存在，断言失败
+  data:
+    - [["delete1","delete2"],0,"deleted"]
+    - [[],40063,"some parameters are empty"]
+    - [["delet1","delet2","delet3"],40031,"invalid userid list"]
+    - [["delete3","delet1"],40031,"invalid userid list"]
 
 
+# 编辑联系人，对应参数：userid，name，mobile，errcode,errmsg
+edit:
+  ids:
+    - "userid存在，name不为空，电话不重复，断言成功"
+    - "userid存在，name为空，断言失败"
+    - "userid不存在，断言失败"
+    - "userid为空，断言失败"
+    - "修改后的mobile重复，断言失败"
+  data:
+    - ["edit","edit","13172999999",0,"updated"]
+    - ["edit","","13172661165",40058,"name exceed min utf8 words 1"]
+    - ["edit1","edit1","13172661165",60111,"userid not found"]
+    - ["","edit1","13172661165",40058,"userid exceed min length"]
+    - ["edit","edit","13172661165",60104,"mobile existed"]
 
 
+# 获取联系人，对应参数：userid，errcode,errmsg
+get:
+  ids:
+    - userid存在，断言成功
+    - userid为空，断言失败
+    - userid不存在，断言失败
+  data:
+    - ["get",0,"ok"]
+    - ["",60111,"userid not found"]
+    - ["get1",60111,"userid not found"]
 
+# 获取活跃数，对应参数：date，errcode,errmsg
+active:
+  ids:
+    - date为2020-01-01，断言成功
+    - data大于如今日期，断言失败
+    - data为空，断言失败
+    - data格式不正确，断言失败
+  data:
+    - ["2020-10-10",0,"ok"]
+    - ["2035-10-10",40058,"invalid Request Parameter"]
+    - ["",40063,"some parameters are empty"]
+    - ["abcd",40058,"invalid Request Parameter"]
+
+# 获取邀请二维码，对应参数：size，errcode,errmsg
+# 这个用例有毒，还不如不要size，浪费资源
+qr:
+  ids:
+    - 二维码尺寸为1，断言成功
+    - 二维码尺寸为2，断言成功
+    - 二维码尺寸为3，断言成功
+    - 二维码尺寸为空，断言失败
+    - 二维码尺寸为4，断言失败
+    - 二维码尺寸非法，断言失败
+  data:
+    - [1,0,""]
+    - [2,0,""]
+    - [3,0,""]
+    - ["",0,""]
+    - [4,0,""]
+    - ["haha",0,""]
+
+# 获取部门简单信息对应参数：department_id,fetch_child，errcode,errmsg
+depart_simple:
+  ids:
+    - department_id和fetch_child存在合法，断言成功
+    # 但成功了，估计是就判断前面的大部门，小部门就不弄了
+    - department_id合法，fetch_child非法，断言失败
+    - department_id合法，fetch_child为空，断言失败
+    - department_id为空，fetch_child合法，断言失败
+    - department_id非法，fetch_child合法，断言失败
+  data:
+    - [1,3,0,"ok"]
+    - [1,100,0,"expect no ok"]
+    - [1,None,0,"expect no ok"]
+    - [None,1,60003,"department not found"]
+    - [100,1,60003,"department not found"]
+
+# 获取部门复杂信息对应参数：department_id,fetch_child，errcode,errmsg
+depart_explicit:
+  ids:
+    - department_id和fetch_child存在合法，断言成功
+    # 但成功了，估计是就判断前面的大部门，小部门就不弄了
+    - department_id合法，fetch_child非法，断言失败
+    - department_id合法，fetch_child为空，断言失败
+    - department_id为空，fetch_child合法，断言失败
+    - department_id非法，fetch_child合法，断言失败
+  data:
+    - [1,3,0,"ok"]
+    - [1,100,0,"expect no ok"]
+    - [1,None,0,"expect no ok"]
+    - [None,1,60003,"department not found"]
+    - [100,1,60003,"department not found"]
 
 
 

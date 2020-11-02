@@ -1,0 +1,3 @@
+[32mINFO    [0m log:test_member.py:25 -------开始测试增加成员-------
+[32mINFO    [0m log:test_member.py:28 打印响应结果:{'errcode': 60102, 'errmsg': 'userid existed, hint: [1603977983_53_05d561ddbb513c9b75ffc17526bff438], from ip: 112.97.48.108, more info at https://open.work.weixin.qq.com/devtool/query?e=60102'}
+[32mINFO    [0m log:test_member.py:29 -------测试结束-------

@@ -1,3 +1,0 @@
-[32mINFO    [0m log:test_member.py:25 -------开始测试增加成员-------
-[32mINFO    [0m log:test_member.py:28 打印响应结果:{'errcode': 40058, 'errmsg': 'userid exceed min length 1. Invalid input invalid Request Parameter, hint: [1603977981_53_fc1524f40bbc444bead4f4f6c0c23875], from ip: , more info at https://open.work.weixin.qq.com/devtool/query?e=40058'}
-[32mINFO    [0m log:test_member.py:29 -------测试结束-------

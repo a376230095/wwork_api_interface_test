@@ -45,6 +45,7 @@ Thumbs.db
 .idea/*
 .project
 .pydevproject
+report/
 
 # images
 *.png

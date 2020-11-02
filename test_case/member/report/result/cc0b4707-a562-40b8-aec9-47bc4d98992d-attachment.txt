@@ -1,3 +1,0 @@
-2020-10-29 21:26:22,082|INFO    |test_member.py:  25|-------开始测试增加成员-------
-2020-10-29 21:26:22,982|INFO    |test_member.py:  28|打印响应结果:{'errcode': 40058, 'errmsg': 'name exceed min utf8 words 1. Invalid input invalid Request Parameter, hint: [1603977982_53_df0e5f879ce489bb85a9fd6ec4c8cbb6], from ip: , more info at https://open.work.weixin.qq.com/devtool/query?e=40058'}
-2020-10-29 21:26:22,982|INFO    |test_member.py:  29|-------测试结束-------

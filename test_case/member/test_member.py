@@ -109,7 +109,7 @@ class TestMember():
         assert res["errcode"] == errcode
         assert errmsg in res["errmsg"]
 
-    @allure.severity(allure.severity_level.NORMALL)
+    @allure.severity(allure.severity_level.NORMAL)
     @allure.story("查看企业微信活跃度")
     @pytest.mark.parametrize(("date,errcode,errmsg"), active_data, ids=active_ids)
     def test_active_stat(self,date,errcode,errmsg):
@@ -120,7 +120,7 @@ class TestMember():
         assert res["errcode"] == errcode
         assert errmsg in res["errmsg"]
 
-    @allure.severity(allure.severity_level.NORMALLL)
+    @allure.severity(allure.severity_level.NORMAL)
     @allure.story("增加联系人")
     @pytest.mark.parametrize(("size,errcode,errmsg"), qr_data, ids=qr_ids)
     def test_get_invite_qr(self,size,errcode,errmsg):
@@ -148,7 +148,7 @@ class TestMember():
     def test_get_depart_member_explict(self,department_id,fetch_child,errcode,errmsg):
         log.info("-------开始部门成员详细信息-------")
         res = self.member.get_depart_member_explicit(self.token,department_id,fetch_child)
-        log.info(f"打印响应结果:{res}" )
+        log.info(f"打印响应结果:{res}")
         log.info("-------测试结束-------")
         assert res["errcode"] == errcode
         assert errmsg in res["errmsg"]

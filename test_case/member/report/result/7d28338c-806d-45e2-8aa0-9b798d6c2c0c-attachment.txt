@@ -1,3 +1,0 @@
-2020-10-29 21:26:24,046|INFO    |test_member.py:  25|-------开始测试增加成员-------
-2020-10-29 21:26:24,538|INFO    |test_member.py:  28|打印响应结果:{'errcode': 60104, 'errmsg': 'mobile existed:tong5'}
-2020-10-29 21:26:24,538|INFO    |test_member.py:  29|-------测试结束-------

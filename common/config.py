@@ -43,4 +43,4 @@ if __name__ == "__main__":
     print(a.config_file_path)
     print(a.get_key("test", "name"))
     a.set_value("test", "name", "tongtong")
-    print(a.get_key("log", "name"))
+    print(a.get_key("logs", "name"))

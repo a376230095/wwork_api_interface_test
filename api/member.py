@@ -7,10 +7,10 @@ from common.get_log import log
 # def log_test(text=None):
 #     def decorate(func):
 #         def wrapper(*args,**kargs):
-#             log.info(f"-----------------开始测试{text}用例")
+#             logs.info(f"-----------------开始测试{text}用例")
 #             res=func(*args,**kargs)
-#             log.info(f"响应结果是：{res}")
-#             log.info(f"-----------------结束测试{text}用例")
+#             logs.info(f"响应结果是：{res}")
+#             logs.info(f"-----------------结束测试{text}用例")
 #             return res
 #         return wrapper
 #     return decorate

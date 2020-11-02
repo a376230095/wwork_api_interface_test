@@ -9,7 +9,7 @@ class Log:
     formatter = logging.Formatter("%(asctime)s|%(levelname)-6s|%(filename)s:%(lineno)-3s|%(message)s","%Y-%m-%d-%H:%M")
     BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
-    def __init__(self,name="log"):
+    def __init__(self,name="logs"):
         self.log_name=name
         # 生成记录器，名字为"tong",其实是用logger调用，这里估计是给配置文件用的
         self.logger=logging.getLogger(name)
@@ -30,14 +30,14 @@ class Log:
 
     def set_file(self):
         # 日期：创造Log_2020-12-03.log文件
-        a = self.log_name+"_"+str(datetime.date.today()) + ".log"
-        b = os.path.join(self.BASE_PATH,"log",a)
+        a = self.log_name+"_"+str(datetime.date.today()) + ".logs"
+        b = os.path.join(self.BASE_PATH,"logs",a)
 
         # 通过配置文件，获取log是w模式还是a的追加模式
-        file_mode=cf.get_key("log","file_mode")
+        file_mode=cf.get_key("logs","file_mode")
 
-        # 文件处理器，文件名为demo.log
-        filehandle = logging.FileHandler(filename=b,mode="w")
+        # 文件处理器，文件名为demo.logs
+        filehandle = logging.FileHandler(filename=b,mode=file_mode)
         # 默认等级为INFO
         filehandle.setLevel(logging.INFO)
         # 处理器添加格式，这里都添加同一个
@@ -62,6 +62,6 @@ class Log:
 log=Log().get_log()
 
 if __name__=="__main__":
-    # log=Log().get_log()
+    # logs=Log().get_log()
     log.error("abc")
 

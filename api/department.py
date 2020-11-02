@@ -12,13 +12,10 @@ class Department(BaseApi):
     ip=cf.get_key("env","formal_ip")
 
 
-
-
     def get_depart(self,id=None):
         p_data={"ip":self.ip,"token":token,"id":id}
         res=self.send_api_data("data/department/department_api.yml",p_data,"get")
         return res
-
 
 
 if __name__ == "__main__":

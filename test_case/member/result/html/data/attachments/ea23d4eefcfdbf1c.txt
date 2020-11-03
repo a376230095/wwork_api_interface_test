@@ -1,0 +1,4 @@
+2020-11-02-11:20|INFO  |test_member.py:61 |-------开始测试增加成员-------
+2020-11-02-11:20|INFO  |member.py:44 |{'method': 'post', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/create', 'params': 'access_token=Bwf6sydLp1hhz-JHNjEWvG0htaxQj_vEkeF5GZj5dML59j5uaLsRlsj2a6KwMNIg4qELWiwMI9JGooFyuhOKwFjD_m5SrR6n8Gy1m16FopodzH7LeHw2sbaQa7ucTfSwLd4y822Lw6q9GC6Gj2xOqhBpbgZ8omZ-OzajZhjyiXCC7L4KoZkidG8-AkyrC5UZZNtGFcHjH2zvsGz8K2T4hg', 'json': {'userid': 'tong3', 'name': 'tong3', 'mobile': '', 'department': [1, 2]}}
+2020-11-02-11:20|INFO  |test_member.py:63 |打印响应结果:{'errcode': 60129, 'errmsg': 'missing mobile or email, hint: [1604287234_53_2500c683daa64f9e8d49fa838142725e], from ip: 27.38.252.72, more info at https://open.work.weixin.qq.com/devtool/query?e=60129'}
+2020-11-02-11:20|INFO  |test_member.py:64 |-------测试结束-------

@@ -1,0 +1,4 @@
+2020-11-02-11:20|INFO  |test_member.py:61 |-------开始测试增加成员-------
+2020-11-02-11:20|INFO  |member.py:44 |{'method': 'post', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/create', 'params': 'access_token=Bwf6sydLp1hhz-JHNjEWvG0htaxQj_vEkeF5GZj5dML59j5uaLsRlsj2a6KwMNIg4qELWiwMI9JGooFyuhOKwFjD_m5SrR6n8Gy1m16FopodzH7LeHw2sbaQa7ucTfSwLd4y822Lw6q9GC6Gj2xOqhBpbgZ8omZ-OzajZhjyiXCC7L4KoZkidG8-AkyrC5UZZNtGFcHjH2zvsGz8K2T4hg', 'json': {'userid': 'tong', 'name': 'tong4', 'mobile': '13222661162', 'department': [1, 2]}}
+2020-11-02-11:20|INFO  |test_member.py:63 |打印响应结果:{'errcode': 60102, 'errmsg': 'userid existed, hint: [1604287234_53_c65d5b0e6e343a43e56c80b73ae4f48d], from ip: 27.38.252.72, more info at https://open.work.weixin.qq.com/devtool/query?e=60102'}
+2020-11-02-11:20|INFO  |test_member.py:64 |-------测试结束-------

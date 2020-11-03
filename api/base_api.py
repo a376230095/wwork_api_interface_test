@@ -52,7 +52,7 @@ class BaseApi():
     # 模板技术输入yml文件路径，data是需要修改的模板变量的字典类型
     # sub是对yml的数据进行二次提取，等于是一个大字典，再提取下一层的小字典，为了让一个yml文件可以有多个接口数据
     def template(cls,path,data,sub=None):
-        with open(path) as f:
+        with open(path,encoding="utf-8") as f:
             if sub is None:
                 '''
                 不需要对数据进行二次提取，Template(f.read()).substitute(data)先替换变量
@@ -73,4 +73,4 @@ if __name__=="__main__":
     a=BaseApi()
     # print(a.Base_Path)
     # a.Base_Path
-    print(a.load_yaml("data/member/member_para_data.yml")["multi_delete"]["data"])
+    print(a.load_yaml("data/department/para_department.yml"))

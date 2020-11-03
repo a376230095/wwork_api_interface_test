@@ -1,0 +1,3 @@
+2020-11-02-11:20|INFO  |test_member.py:94 |-------开始批量删除获取成员-------
+2020-11-02-11:20|INFO  |test_member.py:96 |打印响应结果:{'errcode': 40031, 'errmsg': 'invalid userid list:delet1'}
+2020-11-02-11:20|INFO  |test_member.py:97 |-------测试结束-------

@@ -1,0 +1,117 @@
+{
+  "uid" : "d5f6b1de7192f628",
+  "name" : "test01_add_member[没有name，断言失败]",
+  "fullName" : "test_case.member.test_member.TestMember#test01_add_member",
+  "historyId" : "2e025cfab055fd0dc2a573b96bd183b7",
+  "time" : {
+    "start" : 1604287233811,
+    "stop" : 1604287233989,
+    "duration" : 178
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "add",
+    "time" : {
+      "start" : 1604287232487,
+      "stop" : 1604287233040,
+      "duration" : 553
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "dcc003003bc60a20",
+      "name" : "log",
+      "source" : "dcc003003bc60a20.txt",
+      "type" : "text/plain",
+      "size" : 882
+    }, {
+      "uid" : "8624fac6d656cf54",
+      "name" : "stderr",
+      "source" : "8624fac6d656cf54.txt",
+      "type" : "text/plain",
+      "size" : 895
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "通讯录人员的增删改查等接口测试"
+  }, {
+    "name" : "story",
+    "value" : "增加联系人"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case.member"
+  }, {
+    "name" : "suite",
+    "value" : "test_member"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMember"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-4F3KR3S3"
+  }, {
+    "name" : "thread",
+    "value" : "2704-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.member.test_member"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "errcode",
+    "value" : "40058"
+  }, {
+    "name" : "errmsg",
+    "value" : "'name exceed min utf8 words 1'"
+  }, {
+    "name" : "mobile",
+    "value" : "'13221661163'"
+  }, {
+    "name" : "name",
+    "value" : "''"
+  }, {
+    "name" : "userid",
+    "value" : "'tong2'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d5f6b1de7192f628.json",
+  "parameterValues" : [ "40058", "'name exceed min utf8 words 1'", "'13221661163'", "''", "'tong2'" ]
+}

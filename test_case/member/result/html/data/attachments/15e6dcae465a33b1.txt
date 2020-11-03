@@ -1,0 +1,4 @@
+2020-11-02-11:20|INFO  |member.py:44 |{'method': 'post', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/create', 'params': 'access_token=Bwf6sydLp1hhz-JHNjEWvG0htaxQj_vEkeF5GZj5dML59j5uaLsRlsj2a6KwMNIg4qELWiwMI9JGooFyuhOKwFjD_m5SrR6n8Gy1m16FopodzH7LeHw2sbaQa7ucTfSwLd4y822Lw6q9GC6Gj2xOqhBpbgZ8omZ-OzajZhjyiXCC7L4KoZkidG8-AkyrC5UZZNtGFcHjH2zvsGz8K2T4hg', 'json': {'userid': 'edit', 'name': 'name', 'mobile': '13172669999', 'department': [1, 2]}}
+2020-11-02-11:20|INFO  |test_member.py:105|-------开始修改获取成员-------
+2020-11-02-11:20|INFO  |test_member.py:107|打印响应结果:{'errcode': 0, 'errmsg': 'updated'}
+2020-11-02-11:20|INFO  |test_member.py:108|-------测试结束-------

@@ -1,0 +1,99 @@
+{
+  "uid" : "c2940a5f3034d74a",
+  "name" : "test_get_depart_member[department_id非法，fetch_child合法，断言失败]",
+  "fullName" : "test_case.member.test_member.TestMember#test_get_depart_member",
+  "historyId" : "313b3c054196ec1ac68d47bf02a761f4",
+  "time" : {
+    "start" : 1604287244290,
+    "stop" : 1604287244613,
+    "duration" : 323
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c0ac4105652cce53",
+      "name" : "log",
+      "source" : "c0ac4105652cce53.txt",
+      "type" : "text/plain",
+      "size" : 1129
+    }, {
+      "uid" : "fcd1895b1d47f9eb",
+      "name" : "stderr",
+      "source" : "fcd1895b1d47f9eb.txt",
+      "type" : "text/plain",
+      "size" : 1142
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "通讯录人员的增删改查等接口测试"
+  }, {
+    "name" : "story",
+    "value" : "查看部门联系人的简单信息"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case.member"
+  }, {
+    "name" : "suite",
+    "value" : "test_member"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMember"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-4F3KR3S3"
+  }, {
+    "name" : "thread",
+    "value" : "2704-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.member.test_member"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "department_id",
+    "value" : "100"
+  }, {
+    "name" : "errcode",
+    "value" : "60003"
+  }, {
+    "name" : "errmsg",
+    "value" : "'department not found'"
+  }, {
+    "name" : "fetch_child",
+    "value" : "1"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c2940a5f3034d74a.json",
+  "parameterValues" : [ "100", "60003", "'department not found'", "1" ]
+}

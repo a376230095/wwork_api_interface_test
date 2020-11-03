@@ -1,0 +1,111 @@
+{
+  "uid" : "3386a57f484635a1",
+  "name" : "test05_multi_delete_member[userid_list都不存在，断言失败]",
+  "fullName" : "test_case.member.test_member.TestMember#test05_multi_delete_member",
+  "historyId" : "bfa9129a5ee3e75f2ee62b0cc7447c7c",
+  "time" : {
+    "start" : 1604287240575,
+    "stop" : 1604287240824,
+    "duration" : 249
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "multi_delete",
+    "time" : {
+      "start" : 1604287238028,
+      "stop" : 1604287239701,
+      "duration" : 1673
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "6897992ed41df465",
+      "name" : "log",
+      "source" : "6897992ed41df465.txt",
+      "type" : "text/plain",
+      "size" : 283
+    }, {
+      "uid" : "db3561ef6565a013",
+      "name" : "stderr",
+      "source" : "db3561ef6565a013.txt",
+      "type" : "text/plain",
+      "size" : 293
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "通讯录人员的增删改查等接口测试"
+  }, {
+    "name" : "story",
+    "value" : "批量删除联系人"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case.member"
+  }, {
+    "name" : "suite",
+    "value" : "test_member"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMember"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-4F3KR3S3"
+  }, {
+    "name" : "thread",
+    "value" : "2704-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.member.test_member"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "errcode",
+    "value" : "40031"
+  }, {
+    "name" : "errmsg",
+    "value" : "'invalid userid list'"
+  }, {
+    "name" : "userid_list",
+    "value" : "['delet1', 'delet2', 'delet3']"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3386a57f484635a1.json",
+  "parameterValues" : [ "40031", "'invalid userid list'", "['delet1', 'delet2', 'delet3']" ]
+}

@@ -30,7 +30,7 @@ class Log:
 
     def set_file(self):
         # 日期：创造Log_2020-12-03.log文件
-        a = self.log_name+"_"+str(datetime.date.today()) + ".logs"
+        a = self.log_name+"_"+str(datetime.date.today()) + ".log"
         b = os.path.join(self.BASE_PATH,"logs",a)
 
         # 通过配置文件，获取log是w模式还是a的追加模式

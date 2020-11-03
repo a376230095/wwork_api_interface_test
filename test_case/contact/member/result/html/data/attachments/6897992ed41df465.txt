@@ -1,0 +1,3 @@
+[32mINFO    [0m log:test_member.py:94 -------开始批量删除获取成员-------
+[32mINFO    [0m log:test_member.py:96 打印响应结果:{'errcode': 40031, 'errmsg': 'invalid userid list:delet1,delet2,delet3'}
+[32mINFO    [0m log:test_member.py:97 -------测试结束-------

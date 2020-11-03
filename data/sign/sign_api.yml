@@ -1,0 +1,7 @@
+"method": "post"
+"url": "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/add_corp_tag"
+"params": "access_token=$token"
+"json":
+    "group_id": "etMCs1DwAAg_jBNAuvGR3B21cwl4o0jg"
+    "tag":
+      - "name": "$name"

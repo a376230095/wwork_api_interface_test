@@ -1,0 +1,59 @@
+# 增加部门，参数有parentid，name,errcode，errmsg
+add:
+  ids:
+    - parentid存在，name存在不唯一，增加部门成功
+    - parentid为空，增加部门失败
+    - parentid不存在，增加部门失败
+    - parentid存在，name为空，增加部门失败
+    - parentid存在，name非法，增加部门失败
+    - parentid存在，name重复，增加部门失败
+  data:
+    - [1,"add",0,"created"]
+    - ["","add1",60004,"parent department not found"]
+    - [100,"add2",60004,"parent department not found"]
+    - [1,"",60001,"department invalid length"]
+    - [1,"add<>!?:\/",60009,"department name include invalid char"]
+    - [1,"add",60008,"department existed"]
+
+# 查看部门，参数有id，errcode，errmsg
+get:
+  ids:
+    - 部门id存在，查询特定的部门ok
+    - 部门id为空，查询全部的部门
+    - 部门id不存在，无法查询部门
+  data:
+    - [1,0,"ok"]
+    - ["",0,"ok"]
+    - [200,60123,"invalid party id,"]
+
+# 删除门，参数有id，errcode，errmsg
+delete:
+  ids:
+    - 部门id存在，不存在成员和子部门，删除成功
+    - 部门id存在，存在成员，删除失败
+    - 部门id存在，存在子部门，删除失败
+    - 部门id不存在，删除失败
+    - 部门id为空，删除失败
+  data:
+    - [5,0,"deleted"]
+    - [2,60005,"department contains user"]
+    - [3,60006,"department contains sub-department"]
+    - [100,60123,"invalid party id"]
+    - ["",40058,"invalid Request Parameter"]
+
+# 编辑部门，参数有id，name，errcode，errmsg
+edit:
+  ids:
+    - 部门存在，名字不为空，部门修改成功
+    - 部门存在，名字为空，部门修改失败
+    - 部门存在，名字重复，部门修改失败
+    - 部门不存在，部门修改失败
+    - 部门为空，部门修改失败
+
+  data:
+    - [5,"edit",0,"updated"]
+    # 名字为空应该是fail的，这里有问题
+    - [4,"",0,"ok"]
+    - [5,"aaa",60008,"epartment existed"]
+    - [100,"edit12",60003,"department not found"]
+    - ["","edit2",60003,"department not found"]

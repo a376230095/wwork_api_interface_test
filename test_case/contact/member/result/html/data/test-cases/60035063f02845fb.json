@@ -1,0 +1,107 @@
+{
+  "uid" : "60035063f02845fb",
+  "name" : "test_get_depart_member_explict[department_id合法，fetch_child非法，断言失败]",
+  "fullName" : "test_case.member.test_member.TestMember#test_get_depart_member_explict",
+  "historyId" : "2021053d24a2385ba83221660075f2c3",
+  "time" : {
+    "start" : 1604287244940,
+    "stop" : 1604287245125,
+    "duration" : 185
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 'expect no ok' in 'ok'",
+  "statusTrace" : "self = <test_case.member.test_member.TestMember object at 0x000001B822C16BE0>, department_id = 1, fetch_child = 100, errcode = 0\nerrmsg = 'expect no ok'\n\n    @allure.severity(allure.severity_level.CRITICAL)\n    @allure.story(\"查看部门联系人的复杂信息\")\n    @pytest.mark.parametrize((\"department_id,fetch_child,errcode,errmsg\"), depart_explicit_data, ids=depart_explicit_ids)\n    def test_get_depart_member_explict(self,department_id,fetch_child,errcode,errmsg):\n        log.info(\"-------开始部门成员详细信息-------\")\n        res = self.member.get_depart_member_explicit(self.token,department_id,fetch_child)\n        log.info(f\"打印响应结果:{res}\")\n        log.info(\"-------测试结束-------\")\n        assert res[\"errcode\"] == errcode\n>       assert errmsg in res[\"errmsg\"]\nE       AssertionError: assert 'expect no ok' in 'ok'\n\ntest_member.py:154: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert 'expect no ok' in 'ok'",
+    "statusTrace" : "self = <test_case.member.test_member.TestMember object at 0x000001B822C16BE0>, department_id = 1, fetch_child = 100, errcode = 0\nerrmsg = 'expect no ok'\n\n    @allure.severity(allure.severity_level.CRITICAL)\n    @allure.story(\"查看部门联系人的复杂信息\")\n    @pytest.mark.parametrize((\"department_id,fetch_child,errcode,errmsg\"), depart_explicit_data, ids=depart_explicit_ids)\n    def test_get_depart_member_explict(self,department_id,fetch_child,errcode,errmsg):\n        log.info(\"-------开始部门成员详细信息-------\")\n        res = self.member.get_depart_member_explicit(self.token,department_id,fetch_child)\n        log.info(f\"打印响应结果:{res}\")\n        log.info(\"-------测试结束-------\")\n        assert res[\"errcode\"] == errcode\n>       assert errmsg in res[\"errmsg\"]\nE       AssertionError: assert 'expect no ok' in 'ok'\n\ntest_member.py:154: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "ab7a69d088ab586e",
+      "name" : "log",
+      "source" : "ab7a69d088ab586e.txt",
+      "type" : "text/plain",
+      "size" : 5577
+    }, {
+      "uid" : "7d785d8afa02161e",
+      "name" : "stderr",
+      "source" : "7d785d8afa02161e.txt",
+      "type" : "text/plain",
+      "size" : 5590
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "查看部门联系人的复杂信息"
+  }, {
+    "name" : "feature",
+    "value" : "通讯录人员的增删改查等接口测试"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case.member"
+  }, {
+    "name" : "suite",
+    "value" : "test_member"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMember"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-4F3KR3S3"
+  }, {
+    "name" : "thread",
+    "value" : "2704-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.member.test_member"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "department_id",
+    "value" : "1"
+  }, {
+    "name" : "errcode",
+    "value" : "0"
+  }, {
+    "name" : "errmsg",
+    "value" : "'expect no ok'"
+  }, {
+    "name" : "fetch_child",
+    "value" : "100"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "60035063f02845fb.json",
+  "parameterValues" : [ "1", "0", "'expect no ok'", "100" ]
+}

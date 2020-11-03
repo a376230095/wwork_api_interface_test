@@ -1,0 +1,111 @@
+{
+  "uid" : "4e799273bec6c37e",
+  "name" : "test02_get_member[userid为空，断言失败]",
+  "fullName" : "test_case.member.test_member.TestMember#test02_get_member",
+  "historyId" : "87e93447e7de4f0fa514363b5c7f0d36",
+  "time" : {
+    "start" : 1604287236148,
+    "stop" : 1604287236345,
+    "duration" : 197
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get",
+    "time" : {
+      "start" : 1604287235527,
+      "stop" : 1604287235817,
+      "duration" : 290
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2793fd5af713c336",
+      "name" : "log",
+      "source" : "2793fd5af713c336.txt",
+      "type" : "text/plain",
+      "size" : 456
+    }, {
+      "uid" : "6148fb626d11e091",
+      "name" : "stderr",
+      "source" : "6148fb626d11e091.txt",
+      "type" : "text/plain",
+      "size" : 466
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "获得联系人信息"
+  }, {
+    "name" : "feature",
+    "value" : "通讯录人员的增删改查等接口测试"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case.member"
+  }, {
+    "name" : "suite",
+    "value" : "test_member"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMember"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-4F3KR3S3"
+  }, {
+    "name" : "thread",
+    "value" : "2704-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.member.test_member"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "errcode",
+    "value" : "60111"
+  }, {
+    "name" : "errmsg",
+    "value" : "'userid not found'"
+  }, {
+    "name" : "userid",
+    "value" : "''"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4e799273bec6c37e.json",
+  "parameterValues" : [ "60111", "'userid not found'", "''" ]
+}

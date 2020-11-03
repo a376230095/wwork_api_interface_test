@@ -1,0 +1,4 @@
+2020-11-02-11:20|INFO  |test_member.py:61 |-------开始测试增加成员-------
+2020-11-02-11:20|INFO  |member.py:44 |{'method': 'post', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/create', 'params': 'access_token=Bwf6sydLp1hhz-JHNjEWvG0htaxQj_vEkeF5GZj5dML59j5uaLsRlsj2a6KwMNIg4qELWiwMI9JGooFyuhOKwFjD_m5SrR6n8Gy1m16FopodzH7LeHw2sbaQa7ucTfSwLd4y822Lw6q9GC6Gj2xOqhBpbgZ8omZ-OzajZhjyiXCC7L4KoZkidG8-AkyrC5UZZNtGFcHjH2zvsGz8K2T4hg', 'json': {'userid': 'tong2', 'name': '', 'mobile': '13221661163', 'department': [1, 2]}}
+2020-11-02-11:20|INFO  |test_member.py:63 |打印响应结果:{'errcode': 40058, 'errmsg': 'name exceed min utf8 words 1. Invalid input invalid Request Parameter, hint: [1604287233_53_8b438f32d9b7476b7168d1d9868b06af], from ip: , more info at https://open.work.weixin.qq.com/devtool/query?e=40058'}
+2020-11-02-11:20|INFO  |test_member.py:64 |-------测试结束-------

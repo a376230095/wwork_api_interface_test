@@ -1,0 +1,14 @@
+# 增加会议室的api
+add:
+  "method": "post"
+  "url": "https://${ip}/cgi-bin/oa/meetingroom/add"
+  "params": "access_token=${token}"
+#  "json":
+#      "name": $name
+#      # 容纳的人数，int
+#      "capacity": ${capacity}
+#      "city": $city
+##      "building": "${building}"
+#      "floor": $floor
+#      # 支持的设备列表，list，支持1~5
+#      "equipment": $equipment

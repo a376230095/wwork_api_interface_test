@@ -7,12 +7,19 @@ from common.get_log import log
 
 @allure.feature("通讯录人员的增删改查等接口测试")
 class TestMember():
+    @classmethod
+    def get_token(cls,token):
+        return token
     # 通过配置文件获取联系人的secret
     contact_secret=cf.get_key("wwork","contact_secret")
     # 获取access_token
-    token = Wework().get_token(contact_secret)
+    token=Wework(contact_secret)
+    # token = Wework().get_token(contact_secret)
     # 初始化member的api对象
     member = Member()
+
+    # # 比如在类中，怎么才能导入这个conftest的token
+    # access_token=token
 
     '''
     这样获取数据的方法，要读取两次文件，速度太慢了

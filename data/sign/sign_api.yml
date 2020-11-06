@@ -1,7 +1,57 @@
-"method": "post"
-"url": "https://qyapi.weixin.qq.com/cgi-bin/externalcontact/add_corp_tag"
-"params": "access_token=$token"
-"json":
-    "group_id": "etMCs1DwAAg_jBNAuvGR3B21cwl4o0jg"
-    "tag":
-      - "name": "$name"
+# 增加标签的api
+add_sign:
+  "method": "post"
+  "url": "https://${ip}/cgi-bin/tag/create"
+  "params": "access_token=$token"
+  "json":
+      "tagname": ${tagname}
+      "tagid": ${tagid}
+
+# 编辑标签的api
+edit_sign:
+  "method": "post"
+  "url": "https://${ip}/cgi-bin/tag/update"
+  "params": "access_token=$token"
+  "json":
+    "tagname": ${tagname}
+    "tagid": ${tagid}
+
+# 删除标签的api
+delete_sign:
+  "method": "get"
+  "url": "https://${ip}/cgi-bin/tag/delete"
+  "params": "access_token=$token&tagid=${tagid}"
+
+
+# 标签的api
+get_member_sign:
+  "method": "get"
+  "url": "https://${ip}/cgi-bin/tag/get"
+  "params": "access_token=$token&tagid=${tagid}"
+
+# 标签的api
+add_sign_to_member:
+  "method": "post"
+  "url": "https://${ip}/cgi-bin/tag/addtagusers"
+  "params": "access_token=$token"
+  "json":
+    "tagid": ${tagid}
+    "userlist": ${userlist}
+
+# 标签的api
+delete_sign_to_member:
+  "method": "post"
+  "url": "https://${ip}/cgi-bin/tag/deltagusers"
+  "params": "access_token=$token"
+  "json":
+    "tagid": ${tagid}
+    "userlist": ${userlist}
+
+
+# 标签的api
+get_all_sign:
+  "method": "get"
+  "url": "https://${ip}/cgi-bin/tag/list"
+  "params": "access_token=$token"
+
+

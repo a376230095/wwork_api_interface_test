@@ -1,0 +1,173 @@
+# add标签，参数有：token,errcode,errmsg
+get_all_sign:
+  ids:
+    - token正确，获取全部列表成功
+    - token为空，获取全部列表失败
+    - token错误，获取全部列表失败
+  data:
+    - ["${token}",0,"ok"]
+    - ["",41001,"access_token missing"]
+    - ["token",40014,"invalid access_token"]
+
+# add标签，参数有：token,tagid,tagname,errcode,errmsg
+add:
+  ids:
+    - token正确，tagid，tagname那么正确，标签添加成功
+    - token正确，tagid为空，自动生成tagid，tagname不重复，标签添加成功
+    - token为空，标签添加错误
+    - token错误，标签添加失败
+    - token正确，tagid不重复，tagname重复，标签添加失败
+    - token正确，tagid不重复，tagname为空，标签添加失败
+    - token正确，tagid重复，tagname不重复，标签添加失败
+  data:
+    - ["${token}",1,"add1",0,"created"]
+    - ["${token}","","addauto",0,"created"]
+    - ["",3,"add3",41001,"access_token missing"]
+    - ["token",4,"add4",40014,"invalid access_token"]
+    - ["${token}",6,"add1",40071,"UserTag Name Already Exist"]
+    - ["${token}",5,"",40072,"unknow error"]
+    - ["${token}",1,"add6",40068,"invalid tagid"]
+
+
+# edit标签，参数有：token,tagid,tagname,errcode,errmsg
+edit:
+  ids:
+    - token正确，tagid，tagname正确，标签修改成功
+    - token错误，tagid，tagname正确，标签修改失败
+    - token为空，tagid，tagname正确，标签修改失败
+    - token正确，tagid为空，tagname正确，标签修改失败
+    - token正确，tagid不存在，tagname正确，标签修改失败
+    - token正确，tagid存在，tagname重复，标签修改失败
+    - token正确，tagid存在，tagname为空，标签修改失败
+  data:
+    - ["${token}",20,"add00",0,"update"]
+    - ["token",1,"add11",40014,"invalid access_token"]
+    - ["",1,"add10",41001,"access_token missing"]
+    - ["${token}","","add12",40068,"invalid tagid"]
+    - ["${token}",120,"add11",40068,"invalid tagid"]
+    - ["${token}",1,"add10",0,"created"]
+    - ["${token}",1,"",40072,"unknow error"]
+
+# delete标签，参数有：token,tagid,errcode,errmsg
+delete:
+  ids:
+    - token，tagid正确，标签删除成功
+    - token为空，tagid正确，标签删除成功
+    - token错误，tagid正确，标签删除成功
+    - token正确，tagid删除的是已经userid用上的，看看能不能删除成功
+    - token正确，tagid为空，标签删除失败
+    - token正确，tagid不存在，标签删除失败
+  data:
+    - ["${token}",1,0,"created"]
+    - ["",1,0,"created"]
+    - ["token",1,0,"created"]
+    - ["${token}",10,0,"created"]
+    - ["${token}","",0,"created"]
+    - ["${token}",1000,0,"created"]
+
+# get_member_sign标签，参数有：token,tagid,errcode,errmsg
+get:
+  ids:
+    - token正确，tagid存在，获取标签成功
+    - token为空，tagid存在，获取标签失败
+    - token错误，tagid存在，获取标签成功
+    - token正确，tagid不存在，获取标签成功
+    - token正确，tagid为空，获取标签成功
+
+  data:
+    - ["${token}",1,0,"ok"]
+    - ["",1,41001,"access_token missing"]
+    - ["token",1,40014,"invalid access_token"]
+    - ["${token}",123,40068,"invalid tagid"]
+    - ["${token}","",40068,"invalid tagid"]
+
+
+# add标签，参数有：token,tagid,userlist,errcode,errmsg
+add_sign_to_member:
+  ids:
+    - token正确，tagid存在，userlist未被添加过，user添加标签成功
+    - token正确，tagid存在，userlist已被添加过，user添加标签成功
+    - token为空，tagid存在，userlist未被添加过，user添加标签失败
+    - token错误，tagid存在，userlist未被添加过，user添加标签失败
+    - token正确，tagid为空，userlist未被添加过，user添加标签失败
+    - token正确，tagid不存在，userlist未被添加过，user添加标签失败
+    - token正确，tagid存在，userlist不存在，user添加标签失败
+    - token正确，tagid存在，userlist为空，user添加标签失败
+    - token正确，tagid存在，userlist有一个不存在，user添加标签失败
+  data:
+    - ["${token}",1,["sign1","sign2"],0,"ok"]
+    - ["${token}",1,["sign1","sign2"],0,"ok"]
+    - ["",1,["sign3","sign4"],41001,"access_token missing"]
+    - ["token",1,["sign3","sign4"],40014,"invalid access_token"]
+    - ["${token}","",["sign5","sign6"],41017,"missing tagid"]
+    - ["${token}",132,["sign5","sign6"],40068,"invalid tagid"]
+    - ["${token}",1,["signggg"],40070,"list all invalid"]
+    - ["${token}",1,[],40035,"invalid args size"]
+    - ["${token}",1,["sign7","sign80"],0,"ok"]
+
+
+# add标签，参数有：token,tagid,userlist,errcode,errmsg,invalidlist
+delete_sign_to_member:
+  ids:
+    - token正确，tagid存在，userlist存在并被添加过，user标签删除成功
+    - token为空，tagid存在，userlist存在并被添加过，user标签删除失败
+    - token错误，tagid存在，userlist存在并被添加过，user标签删除失败
+    - token正确，tagid不存在，userlist存在并被添加过，user标签删除失败
+    - token正确，tagid为空，userlist存在并被添加过，user标签删除失败
+    - token正确，tagid存在，userlist为空，user标签删除失败
+    - token正确，tagid存在，userlist不存在，user标签删除失败
+    - token正确，tagid存在，userlist存在但没有被添加过，user标签删除失败
+    - token正确，tagid存在，userlist有一个没有被添加过，有一个被添加过，user标签删除失败
+
+  data:
+    - ["${token}",1,["sign1","sign2"],0,"deleted",""]
+    - ["",1,["sign3","sign4"],41001,"access_token missing",""]
+    - ["token",1,["sign3","sign4"],40014,"invalid access_token",""]
+    - ["${token}",100,["sign3","sign4"],81011,"no priviledge to access/modify tag",""]
+    - ["${token}","",["sign3","sign4"],41017,"missing tagid",""]
+    - ["${token}",1,[],40035,"invalid args size",""]
+    - ["${token}",1,["sign100","sign200"],40070,"list all invalid",""]
+    - ["${token}",1,["none1","none2"],40070,"list all invalid",""]
+    - ["${token}",1,["sign3","none1"],0,"deleted","none1"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

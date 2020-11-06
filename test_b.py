@@ -1,10 +1,20 @@
+add:
+-
+- 1
+- 2
+- 3
 
-class TestA():
-    def test_b(self):
-        try:
-            assert 1==2
-        except:
-            print(123)
+-
+- 2
+- 3
+- 5
+sub:
+-
+- 5
+- 1
+- 4
 
-    def test_c(self):
-        assert 1==2
+-
+- 10
+- 8
+- 2

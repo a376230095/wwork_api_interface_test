@@ -1,0 +1,65 @@
+# 增加日历
+add:
+  "method": "post"
+  "url": "https://qyapi.weixin.qq.com/cgi-bin/oa/calendar/add"
+  "params": "access_token=$token"
+  "json":
+    "calendar":
+      # 组织者的userid
+      "organizer": ${organizer}
+      # 只读为0，课编辑是1
+      "readonly": ${readonly}
+      # 日历设置为组织者的默认日历,0和1,1默认是
+      "set_as_default": ${set_as_default}
+      # 日历标题。1 ~ 128 字符
+      "summary": ${summary}
+      # 颜色，#六位数，16进制
+      "color": ${color}
+      # 日历描述。0 ~ 512 字符
+      "description": ${description}
+
+# 获取日历的api
+get:
+  "method": "post"
+  "url": "https://qyapi.weixin.qq.com/cgi-bin/oa/calendar/get"
+  "params": "access_token=$token"
+  "json":
+    "cal_id_list": ${cal_id_list}
+
+# 编辑日历
+edit:
+  "method": "post"
+  "url": "https://qyapi.weixin.qq.com/cgi-bin/oa/calendar/update"
+  "params": "access_token=$token"
+  "json":
+    "calendar":
+      # 日历的id
+      "cal_id": ${cal_id}
+      # 只读为0，课编辑是1
+      "readonly": ${readonly}
+      # 日历标题。1 ~ 128 字符
+      "summary": ${summary}
+      # 颜色，#六位数，16进制
+      "color": ${color}
+      # 日历描述。0 ~ 512 字符
+      "description": ${description}
+
+# 删除日历
+delete:
+  "method": "post"
+  "url": "https://qyapi.weixin.qq.com/cgi-bin/oa/calendar/del"
+  "params": "access_token=$token"
+  "json":
+    "cal_id": ${cal_id}
+
+
+
+
+
+
+
+
+
+
+
+

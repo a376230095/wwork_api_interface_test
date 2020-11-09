@@ -1,0 +1,59 @@
+# 增加日历
+add:
+  "method": "post"
+  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/add"
+  "params": "access_token=$token"
+  "json":
+    "schedule":
+      "organizer": "userid1",
+      "start_time": 1571274600,
+      "end_time": 1571320210,
+      "attendees":
+        - "userid": "userid2"
+      "summary": "test_summary",
+      "description": "test_description",
+      "location": "test_place",
+
+# 增加日历
+get:
+  "method": "post"
+  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/add"
+  "params": "access_token=$token"
+  "json":
+
+# 增加日历
+edit:
+  "method": "post"
+  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/add"
+  "params": "access_token=$token"
+  "json":
+
+# 增加日历
+delete:
+  "method": "post"
+  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/add"
+  "params": "access_token=$token"
+  "json":
+
+# 增加日历
+get_list:
+  "method": "post"
+  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/add"
+  "params": "access_token=$token"
+  "json":
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

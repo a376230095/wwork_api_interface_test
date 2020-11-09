@@ -2,7 +2,6 @@ import os
 from api.base_api import BaseApi
 from api.wework import Wework
 from common.config import cf
-from common.get_log import log
 
 secret=cf.get_key("wwork","contact_secret")
 token=Wework().get_token(secret)
@@ -36,4 +35,4 @@ if __name__ == "__main__":
     a=Department()
     # print(a.get_depart())
     # print(a.add_depart(1, "tong"))
-    print(a.edit_depart(3,"aaa"))
+    # print(a.edit_depart(3,"aaa"))

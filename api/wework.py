@@ -1,7 +1,6 @@
 from api.base_api import BaseApi
 
 # 封装企业微信公共的api类，继承BaseApi的公共类
-from common.get_log import log
 from common.config import cf
 
 

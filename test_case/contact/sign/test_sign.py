@@ -1,11 +1,9 @@
 import os
 import allure
 import pytest
-
 from api.sign import Sign
 from common.get_log import log
 from test_case.contact.common_data import contact_token
-
 
 class TestSign():
     base_path=os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))))

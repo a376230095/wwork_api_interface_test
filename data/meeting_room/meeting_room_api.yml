@@ -13,102 +13,38 @@ add:
       # 支持的设备列表，list，支持1~5
       "equipment": ${equipment}
 
-##
-#get:
-#  "method": "POST"
-#  "url": "https://${ip}/cgi-bin/oa/list/"
-#  "params": "access_token=$token"
-#  "json":
-#
-##
-#add:
-#  "method": ""
-#  "url": "https://${ip}/cgi-bin/oa/meetingroom/"
-#  "params": "access_token=$token"
-#  "json":
-#
-##
-#add:
-#  "method": ""
-#  "url": "https://${ip}/cgi-bin/oa/meetingroom/"
-#  "params": "access_token=$token"
-#  "json":
-#
-##
-#add:
-#  "method": ""
-#  "url": "https://${ip}/cgi-bin/oa/meetingroom/"
-#  "params": "access_token=$token"
-#  "json":
-#
-##
-#add:
-#  "method": ""
-#  "url": "https://${ip}/cgi-bin/oa/meetingroom/"
-#  "params": "access_token=$token"
-#  "json":
-#
-##
-#add:
-#  "method": ""
-#  "url": "https://${ip}/cgi-bin/oa/meetingroom/"
-#  "params": "access_token=$token"
-#  "json":
-#
-#
-#
-#
-#
-#
-#
-#
-#
+# 通过条件获取会议室信息的api
+get:
+  "method": "POST"
+  "url": "https://${ip}/cgi-bin/oa/meetingroom/list"
+  "params": "access_token=$token"
+  "json":
+      "city": ${city}
+      "building": ${building}
+      "floor": ${floor}
+      "equipment": ${equipment}
 
 
+# 编辑会议室的api
+edit:
+  "method": "post"
+  "url": "https://${ip}/cgi-bin/oa/meetingroom/edit"
+  "params": "access_token=$token"
+  "json":
+    "meetingroom_id": ${meetingroom_id}
+    "name": ${name}
+    # 容纳的人数，int
+    "capacity": ${capacity}
+    "city": ${city}
+    "building": ${building}
+    "floor": ${floor}
+    # 支持的设备列表，list，支持1~5
+    "equipment": ${equipment}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 删除会议室的api
+delete:
+  "method": "post"
+  "url": "https://${ip}/cgi-bin/oa/meetingroom/del"
+  "params": "access_token=$token"
+  "json":
+    "meetingroom_id": ${meetingroom_id}

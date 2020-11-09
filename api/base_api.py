@@ -1,14 +1,12 @@
 import os
-
 from string import Template
 import requests
 import yaml
 from jsonpath import jsonpath
-
 from common.config import cf
 from common.get_log import log
 # BaseApi实现了所有公共类的需要的东西
-class BaseApi():
+class BaseApi:
     # 封装requests函数，需要传入请求字典类型的req请求
     ip=cf.get_key("env","formal_ip")
     Base_Path=os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -31,15 +29,12 @@ class BaseApi():
     def send_api_data(self,path,p_data,sub):
         path=os.path.join(self.Base_Path,path)
         data:dict=self.template(path,p_data,sub)
-
         log.info(f"api模板改变的参数为：{p_data}")
-        log.info(f"修改前的请求为：{data}")
-        log.info(f"json{data['json']}")
+        # log.info(f"修改前的请求为：{data}")
+        # log.info(f"json{data['json']}")
         for i in data['json'].keys():
-            log.info(f"{data['json'][i]}")
             if data['json'][i]== 'None':
                 data['json'][i] = None
-        [ i for i in data['json'].keys() if data['json'][i]== 'None':data['json'][i] = None]
         log.info(f"修改后的请求为：{data}")
         res=self.send_api(data)
         log.info((f"响应为：{res}"))
@@ -59,6 +54,14 @@ class BaseApi():
                 return yaml.safe_load(f)
             else:
                 return yaml.safe_load(f)[sub]
+
+    @classmethod
+    # 封装yaml写入的代码
+    def save_yaml(cls,path,data):
+        path = os.path.join(cls.Base_Path, path)
+        with open(path,"r+",encoding="utf-8",) as f:
+            yaml.safe_dump(data,f)
+
 
     @classmethod
     # 模板技术输入yml文件路径，data是需要修改的模板变量的字典类型
@@ -82,10 +85,4 @@ class BaseApi():
                 # 错误的写法：return yaml.safe_load(Template(f.read()).substitute(data))
 
 if __name__=="__main__":
-    a=BaseApi()
-    # print(a.Base_Path)
-    # a.Base_Path
-    # print(a.load_yaml("data/department/para_department.yml"))
-    c={'errcode': 0, 'errmsg': 'deleted', 'invalidlist': 'none1', 'invalidparty': []}
-    print(a.jsonpath(c, "$.invalidlis"))
-    print(len(a.jsonpath(c,"$.invalidparty")))
+    pass

@@ -1,20 +1,19 @@
-add:
--
-- 1
-- 2
-- 3
+import yaml
+from api.base_api import BaseApi
+a=BaseApi()
 
--
-- 2
-- 3
-- 5
-sub:
--
-- 5
-- 1
-- 4
+def save_yml(path,data):
+    with open("test.yml","w") as f:
+        yaml.safe_dump(data,f)
 
--
-- 10
-- 8
-- 2
+
+def test_b():
+    c=a.load_yaml("test.yml")
+    c.append("d")
+    save_yml("test.yml",c)
+    # with open("test.yml","w") as f:
+    #     yaml.safe_dump(c,f)
+
+def test_c():
+    a="#1"
+    print(a)

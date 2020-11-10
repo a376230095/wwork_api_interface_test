@@ -1,5 +1,0 @@
-2020-11-02-11:20|INFO  |test_member.py:138|-------开始获取部门成员简单的信息-------
-2020-11-02-11:20|INFO  |member.py:79 |{'token': 'Bwf6sydLp1hhz-JHNjEWvG0htaxQj_vEkeF5GZj5dML59j5uaLsRlsj2a6KwMNIg4qELWiwMI9JGooFyuhOKwFjD_m5SrR6n8Gy1m16FopodzH7LeHw2sbaQa7ucTfSwLd4y822Lw6q9GC6Gj2xOqhBpbgZ8omZ-OzajZhjyiXCC7L4KoZkidG8-AkyrC5UZZNtGFcHjH2zvsGz8K2T4hg', 'department_id': 100, 'fetch_child': 1}
-2020-11-02-11:20|INFO  |member.py:82 |{'method': 'get', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/simplelist', 'params': 'access_token=Bwf6sydLp1hhz-JHNjEWvG0htaxQj_vEkeF5GZj5dML59j5uaLsRlsj2a6KwMNIg4qELWiwMI9JGooFyuhOKwFjD_m5SrR6n8Gy1m16FopodzH7LeHw2sbaQa7ucTfSwLd4y822Lw6q9GC6Gj2xOqhBpbgZ8omZ-OzajZhjyiXCC7L4KoZkidG8-AkyrC5UZZNtGFcHjH2zvsGz8K2T4hg&department_id=100&fetch_child=1'}
-2020-11-02-11:20|INFO  |test_member.py:140|打印响应结果:{'errcode': 60003, 'errmsg': 'department not found, hint: [1604287244_53_30f3b1387671ed64443b615445113b1a], from ip: 27.38.252.72, more info at https://open.work.weixin.qq.com/devtool/query?e=60003', 'userlist': []}
-2020-11-02-11:20|INFO  |test_member.py:141|-------测试结束-------

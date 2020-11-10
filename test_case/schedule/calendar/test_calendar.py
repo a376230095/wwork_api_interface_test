@@ -5,6 +5,9 @@ from api.schedule.wcalendar import WCalendar
 from common.get_log import log
 
 class TestCalendar():
+    '''
+
+    '''
     base_path=os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))))
     calendar=WCalendar()
 

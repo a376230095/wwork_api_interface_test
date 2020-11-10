@@ -1,3 +1,0 @@
-[32mINFO    [0m log:test_member.py:72 -------开始测试获取成员-------
-[32mINFO    [0m log:test_member.py:74 打印响应结果:{'errcode': 60111, 'errmsg': 'userid not found, hint: [1604287236_53_040640aade0fd7172f353152930d7571], from ip: 27.38.252.72, more info at https://open.work.weixin.qq.com/devtool/query?e=60111', 'department': [], 'order': [], 'is_leader_in_dept': []}
-[32mINFO    [0m log:test_member.py:75 -------测试结束-------

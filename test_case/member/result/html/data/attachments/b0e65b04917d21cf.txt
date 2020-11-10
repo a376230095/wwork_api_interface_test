@@ -1,5 +1,0 @@
-[32mINFO    [0m log:member.py:44 {'method': 'post', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/create', 'params': 'access_token=Bwf6sydLp1hhz-JHNjEWvG0htaxQj_vEkeF5GZj5dML59j5uaLsRlsj2a6KwMNIg4qELWiwMI9JGooFyuhOKwFjD_m5SrR6n8Gy1m16FopodzH7LeHw2sbaQa7ucTfSwLd4y822Lw6q9GC6Gj2xOqhBpbgZ8omZ-OzajZhjyiXCC7L4KoZkidG8-AkyrC5UZZNtGFcHjH2zvsGz8K2T4hg', 'json': {'userid': 'delete', 'name': 'delete', 'mobile': '13172222165', 'department': [1, 2]}}
-[32mINFO    [0m log:test_member.py:83 -------开始测试获取成员-------
-[32mINFO    [0m log:member.py:66 请求的参数：{'method': 'get', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/delete', 'params': 'access_token=Bwf6sydLp1hhz-JHNjEWvG0htaxQj_vEkeF5GZj5dML59j5uaLsRlsj2a6KwMNIg4qELWiwMI9JGooFyuhOKwFjD_m5SrR6n8Gy1m16FopodzH7LeHw2sbaQa7ucTfSwLd4y822Lw6q9GC6Gj2xOqhBpbgZ8omZ-OzajZhjyiXCC7L4KoZkidG8-AkyrC5UZZNtGFcHjH2zvsGz8K2T4hg&userid=delete'}
-[32mINFO    [0m log:test_member.py:85 打印响应结果:{'errcode': 0, 'errmsg': 'deleted'}
-[32mINFO    [0m log:test_member.py:86 -------测试结束-------

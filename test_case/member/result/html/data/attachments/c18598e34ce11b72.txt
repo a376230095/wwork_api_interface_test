@@ -1,3 +1,0 @@
-2020-11-02-11:20|INFO  |test_member.py:105|-------开始修改获取成员-------
-2020-11-02-11:20|INFO  |test_member.py:107|打印响应结果:{'errcode': 60104, 'errmsg': 'mobile existed:ZengZhiTong'}
-2020-11-02-11:20|INFO  |test_member.py:108|-------测试结束-------

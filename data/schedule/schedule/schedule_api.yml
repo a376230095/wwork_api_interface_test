@@ -5,42 +5,62 @@ add:
   "params": "access_token=$token"
   "json":
     "schedule":
-      "organizer": "userid1",
-      "start_time": 1571274600,
-      "end_time": 1571320210,
+      # userid
+      "organizer": ${organizer}
+      # 日程开始的unix时间戳
+      "start_time": ${start_time}
+      # 日程结束的unix时间戳
+      "end_time": ${end_time}
+      # 日程的参与人，
       "attendees":
-        - "userid": "userid2"
-      "summary": "test_summary",
-      "description": "test_description",
-      "location": "test_place",
+        - "userid": ${userid}
+      # 标题
+      "summary": ${summary}
+      # 描述
+      "description": ${description}
+      # 位置
+      "location": ${location}
 
 # 增加日历
 get:
   "method": "post"
-  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/add"
+  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/get"
   "params": "access_token=$token"
   "json":
+    "schedule_id_list": ${schedule_id_list}
 
 # 增加日历
 edit:
   "method": "post"
-  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/add"
+  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/update"
   "params": "access_token=$token"
   "json":
+    # userid
+    "organizer": ${organizer}
+    # 日程的id
+    "schedule_id": ${schedule_id}
+    # 日程开始的unix时间戳
+    "start_time": ${start_time}
+    # 日程结束的unix时间戳
+    "end_time": ${end_time}
+    # 日程的参与人，
+    "attendees":
+      - "userid": ${userid}
+    # 标题
+    "summary": ${summary}
+    # 描述
+    "description": ${description}
+    # 位置
+    "location": ${location}
+
 
 # 增加日历
 delete:
   "method": "post"
-  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/add"
+  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/del"
   "params": "access_token=$token"
   "json":
-
-# 增加日历
-get_list:
-  "method": "post"
-  "url": " https://qyapi.weixin.qq.com/cgi-bin/oa/schedule/add"
-  "params": "access_token=$token"
-  "json":
+    "schedule_id": ${schedule_id}
 
 
 

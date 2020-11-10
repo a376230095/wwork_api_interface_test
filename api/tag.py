@@ -1,8 +1,13 @@
+# @Author : TongTong
+
 from api.base_api import BaseApi
 from api.wework import Wework
 
 # 企业微信标签的api类
 class Tag(BaseApi):
+    """
+    非常老旧版本的企业标签的类，可以不看了
+    """
     # 这是标签的秘钥
     secret="MDe1km8BK3AZ05Dnfw4uILuKCZDStZ2NPaokf-UE6c8"
     # 通过get_token获取到标签的access_token

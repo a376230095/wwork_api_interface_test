@@ -1,3 +1,0 @@
-[32mINFO    [0m log:test_member.py:94 -------开始批量删除获取成员-------
-[32mINFO    [0m log:test_member.py:96 打印响应结果:{'errcode': 40063, 'errmsg': 'some parameters are empty, hint: [1604287240_53_b66721cc428705599f98f3a689b137f5], from ip: 27.38.252.72, more info at https://open.work.weixin.qq.com/devtool/query?e=40063'}
-[32mINFO    [0m log:test_member.py:97 -------测试结束-------

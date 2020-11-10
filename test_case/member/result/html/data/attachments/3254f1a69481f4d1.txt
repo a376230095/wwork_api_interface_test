@@ -1,4 +1,0 @@
-[32mINFO    [0m log:test_member.py:83 -------开始测试获取成员-------
-[32mINFO    [0m log:member.py:66 请求的参数：{'method': 'get', 'url': 'https://qyapi.weixin.qq.com/cgi-bin/user/delete', 'params': 'access_token=Bwf6sydLp1hhz-JHNjEWvG0htaxQj_vEkeF5GZj5dML59j5uaLsRlsj2a6KwMNIg4qELWiwMI9JGooFyuhOKwFjD_m5SrR6n8Gy1m16FopodzH7LeHw2sbaQa7ucTfSwLd4y822Lw6q9GC6Gj2xOqhBpbgZ8omZ-OzajZhjyiXCC7L4KoZkidG8-AkyrC5UZZNtGFcHjH2zvsGz8K2T4hg&userid=tongd'}
-[32mINFO    [0m log:test_member.py:85 打印响应结果:{'errcode': 60111, 'errmsg': 'userid not found, hint: [1604287237_53_4d8673af5978ca31aec75a072658f8f1], from ip: 27.38.252.72, more info at https://open.work.weixin.qq.com/devtool/query?e=60111'}
-[32mINFO    [0m log:test_member.py:86 -------测试结束-------

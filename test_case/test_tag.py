@@ -8,7 +8,7 @@ class TestTag():
     请忽略这个类，很老了
     """
     # 由于参数化的代码比classmethod更早执行，所以需要放到最外层去执行
-    base_data=Tag().load_yaml("../data/test_tag.yml")
+    base_data=Tag().load_yaml("data/test_tag.yml")
 
     @classmethod
     # 做测试的初始化，只需要初始化一次
